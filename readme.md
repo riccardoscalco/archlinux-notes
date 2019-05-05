@@ -367,9 +367,11 @@ wiki.archlinux.org/index.php/List_of_applications#Terminal
 
 #### Keyboard bindings
 
-Bind keysym with i3 window manager:
+Bind keysym with i3 window manager. To interactively enter a key and see what keysym it is configured to, use xev (`pacman -S xorg-xev`).
 
 ```
 // ~/.config/i3/config
 bindsym $mod+XF86Eject exec --no-startup-id systemctl suspend
 ```
+
+Ref: [link](i3wm.org/docs/userguide.html#keybindings)
