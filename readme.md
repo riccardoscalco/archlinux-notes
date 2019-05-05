@@ -401,3 +401,23 @@ Install jekyll and bundler:
 gem update
 gem install jekyll bundler
 ```
+
+#### Manage browser profile in tmpfs
+
+To manage the browser profile in tmpfs install profile-sync-daemon:
+
+```
+// yay is an AUR helper, visit github.com/Jguer/yay
+yay -S profile-sync-daemon
+```
+
+Then activate the service:
+
+```
+psd // and edit the indicated file
+psd
+systemctl --user start psd.service
+systemctl --user enable psd.service
+```
+
+Ref: [link](wiki.archlinux.org/index.php/Profile-sync-daemon)
