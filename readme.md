@@ -379,3 +379,25 @@ bindsym $mod+F10 exec --no-startup-id amixer set Master toggle
 ```
 
 Ref: [link](i3wm.org/docs/userguide.html#keybindings)
+
+#### Jekyll
+
+```
+sudo pacman -S ruby
+```
+
+Allow RubyGems to be executed:
+
+```
+// ~/.profile
+PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
+```
+
+Update with `source ~/.profile` for changes to apply.
+
+Install jekyll:
+
+```
+gem update
+gem install jekyll
+```
