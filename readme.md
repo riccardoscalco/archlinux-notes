@@ -372,6 +372,10 @@ Bind keysym with i3 window manager. To interactively enter a key and see what ke
 ```
 // ~/.config/i3/config
 bindsym $mod+XF86Eject exec --no-startup-id systemctl suspend
+
+bindsym $mod+F12 exec --no-startup-id amixer set Master 5%+
+bindsym $mod+F11 exec --no-startup-id amixer set Master 5%-
+bindsym $mod+F10 exec --no-startup-id amixer set Master toggle
 ```
 
 Ref: [link](i3wm.org/docs/userguide.html#keybindings)
