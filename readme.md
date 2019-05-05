@@ -421,3 +421,23 @@ systemctl --user enable psd.service
 ```
 
 Ref: [link](wiki.archlinux.org/index.php/Profile-sync-daemon)
+
+#### Enable Trim on SSD
+
+Verify trim support as described in [wiki.archlinux.org/index.php/Solid_state_drive#TRIM](wiki.archlinux.org/index.php/Solid_state_drive#TRIM).
+
+Check if unit `fstrim.timer` is installed:
+
+```
+systemctl list-unit-files ! grep "fstrim"
+```
+
+Enable the timer unit:
+
+```
+systemctl enable fstrim.timer
+```
+
+The timer will activate the service weekly.
+
+Ref: [en.wikipedia.org/wiki/Trim_(computing)](en.wikipedia.org/wiki/Trim_(computing)).
