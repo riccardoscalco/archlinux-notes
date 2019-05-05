@@ -395,9 +395,9 @@ PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 
 Update with `source ~/.profile` for changes to apply.
 
-Install jekyll:
+Install jekyll and bundler:
 
 ```
 gem update
-gem install jekyll
+gem install jekyll bundler
 ```
