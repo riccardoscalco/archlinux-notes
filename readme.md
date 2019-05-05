@@ -364,3 +364,12 @@ Ref: [link](wiki.archlinux.org/index.php/Xorg/Keyboard_configuration)
 #### Framebuffer terminal (TODO)
 
 wiki.archlinux.org/index.php/List_of_applications#Terminal
+
+#### Keyboard bindings
+
+Bind keysym with i3 window manager:
+
+```
+// ~/.config/i3/config
+bindsym $mod+XF86Eject exec --no-startup-id systemctl suspend
+```
