@@ -475,7 +475,7 @@ netctl enable <profile>
 #### Disable pc speaker beep
 
 ```
-$ echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
+echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
 ```
 
 #### Redshift
@@ -497,3 +497,10 @@ exec i3
 Note that the systemctl user service fails (`systemctl --user`) (TODO: see arch docs)
 
 Ref: [link](wiki.archlinux.org/index.php/Redshift)
+
+
+#### Enable F<num> keys on Apple Keyboard
+
+```
+echo "options hid_apple fnmode=2" > /etc/modprobe.d/hid_apple.conf
+```
