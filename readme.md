@@ -586,7 +586,7 @@ shift altgr keycode 26 = braceleft
 shift altgr keycode 27 = braceright
 ```
 
-#### Environmental variables
+#### Environment variables
 
 ```
 ~/.profile
