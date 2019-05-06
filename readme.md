@@ -7,6 +7,59 @@
 * evaluate file manager (github.com/jarun/nnn#cmdline-options)
 * consolidate colorisation (wiki.archlinux.org/index.php/Color_output_in_console#pacman)
 
+#### Installation notes
+
+```
+loadkeys it
+setfont latarcyrheb-sun32 // use bigger font in HiDMI monitor (see also terminus fonts)
+wifi-menu
+ping www.archlinux.org // test connection
+timedatectl set-ntp true
+
+// Disk partition
+lsblk
+cfdisk // sda1 5M linux boot and sda2 remaining size linux
+mkfs.ext4 /dev/sda1
+mkfs.ext4 /dev/sda2
+
+mount /dev/sda2 /mnt
+pacstrap /mnt base base-devel
+genfstab -U /mnt >> /mnt/etc/fstab
+
+// CHROOT
+arch-chroot /mnt
+ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
+hwclock --systohc
+
+// Setup locales
+// uncomment `it_IT.UTF-8` in `/etc/locale.gen`
+echo 'LANG="it_IT.UTF-8"' >> /etc/locale.conf
+echo 'LC_COLLATE="C"' >> /etc/locale.conf 
+
+// Set Hostname
+
+// Install packages
+pacman -S iw wpa_supplicant dialog
+
+// Set admin psw
+passwd
+
+// Setup Grub
+pacman -S intel-ucode grub
+grub-install --target=i386-pc /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
+
+// Add user
+pacman -S zsh
+useradd -m -s /bin/zsh riccardo
+passwd riccardo
+// edit sudoers file using visudo
+
+// Use terminus font in the Virtual console
+pacman -S terminus-font
+setfont ter-132n (add FONT=ter-132n in /etc/vconsole.conf)
+```
+
 #### Autostart X at login
 
 Add the following to `.zshrc` :
