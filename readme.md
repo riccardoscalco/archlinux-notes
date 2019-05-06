@@ -441,3 +441,27 @@ systemctl enable fstrim.timer
 The timer will activate the service weekly.
 
 Ref: [en.wikipedia.org/wiki/Trim_(computing)](en.wikipedia.org/wiki/Trim_(computing)).
+
+#### Netctl
+
+Network profiles are in `/etc/netctl`, in case you want to remove a profile just delete the relevant file.
+
+List available profiles:
+
+```
+netctl list
+```
+
+Use `wifi-menu` to generate profiles.
+
+Start a profile:
+
+```
+netctl start <profile>
+```
+
+Enable a profile on boot:
+
+```
+netctl enable <profile>
+```
