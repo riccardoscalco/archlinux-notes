@@ -214,6 +214,12 @@ Ref card: [https://i3wm.org/docs/refcard.html](https://i3wm.org/docs/refcard.htm
 
 #### ZSH
 
+Install zsh:
+
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+
 Add this to .zshrc to automatically rehash new executables, this avoid to restart the shell for having auto-completion of newly installed programs:
 
 ```
@@ -465,3 +471,29 @@ Enable a profile on boot:
 ```
 netctl enable <profile>
 ```
+
+#### Disable pc speaker beep
+
+```
+$ echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
+```
+
+#### Redshift
+
+```
+pacman -S redshift
+```
+
+Edit file `~/.config/redshift/redshift.conf` with latitude and longitude coordinates.
+
+Start with X, before the window manager:
+
+```
+// ~/.xinitrx
+redshift &
+exec i3
+```
+
+Note that the systemctl user service fails (`systemctl --user`) (TODO: see arch docs)
+
+Ref: [link](wiki.archlinux.org/index.php/Redshift)
