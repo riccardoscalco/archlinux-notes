@@ -295,7 +295,6 @@ Scale an image:
 convert image.png -scale 33% rescaled-image.png
 ```
 
-
 #### Set Wallpaper Image
 
 Install feh:
@@ -314,6 +313,25 @@ Make it persistent adding `~/.fehbg &` in `~/.config/i3/config`:
 
 ```
 exec --no-startup-id ~/.fehbg
+```
+
+#### HiDPI
+
+Edit `.profile` and `.Xresources` as following:
+
+```
+// ~/.profile
+export GDK_SCALE=2
+export GDK_DPI_SCALE=0.5
+export QT_AUTO_SCREEN_SET_FACTOR=0
+export QT_SCALE_FACTOR=2
+export QT_FONT_DPI=96
+```
+
+```
+// ~/.Xresources
+Xft.dpi: 192
+Xcursor.size: 32
 ```
 
 #### Miltihead
@@ -504,3 +522,5 @@ Ref: [link](wiki.archlinux.org/index.php/Redshift)
 ```
 echo "options hid_apple fnmode=2" > /etc/modprobe.d/hid_apple.conf
 ```
+
+
