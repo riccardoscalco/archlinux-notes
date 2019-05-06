@@ -523,4 +523,12 @@ Ref: [link](wiki.archlinux.org/index.php/Redshift)
 echo "options hid_apple fnmode=2" > /etc/modprobe.d/hid_apple.conf
 ```
 
+#### Set custom Keymap in the Virtual Console
 
+Assuming `it` is the loaded keymap, the file to customise is `/usr/local/share/kbd/keymaps/it.map`.
+Add some custom keymaps, for example:
+
+```
+shift altgr keycode 26 = braceleft
+shift altgr keycode 27 = braceright
+```
