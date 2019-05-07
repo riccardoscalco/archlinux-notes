@@ -267,7 +267,7 @@ Ref card: [https://i3wm.org/docs/refcard.html](https://i3wm.org/docs/refcard.htm
 
 #### ZSH
 
-Install zsh:
+Install (oh my) zsh:
 
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -278,6 +278,12 @@ Add this to .zshrc to automatically rehash new executables, this avoid to restar
 ```
 // .zshrc
 zstyle ':completion:*' rehash true
+```
+
+Update with:
+
+```
+upgrade_oh_my_zsh
 ```
 
 #### Termite
