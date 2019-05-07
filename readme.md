@@ -92,6 +92,27 @@ Query foreign packages, i.e. packages that were not found in the sync database (
 pacman -Qm
 ```
 
+#### LOCALE
+
+Display the currently set locale:
+
+```
+locale
+```
+
+List available locales which have been previously generated:
+
+```
+localedef --list-archive
+```
+
+Edit locale in `/etc/locale.conf`, to make locale changes immediate run:
+
+```
+unset LANG
+source /etc/profile.d/locale.sh
+```
+
 #### Audio (TODO)
 
 ```
