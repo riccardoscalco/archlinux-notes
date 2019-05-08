@@ -654,3 +654,43 @@ shift altgr keycode 27 = braceright
 export EDITOR="nvim"
 export VISUAL="nvim"
 ```
+
+#### Update the mirror list with Reflector
+
+Install reflector:
+
+```
+pacman -Syu reflector
+```
+
+Update the mirror list with the HTTPS mirrors located in either France, Germany or Italy, rate and sort the 20 most recently synchronized mirrors by download speed, and overwrite the file `/etc/pacman.d/mirrorlist`:
+
+```
+reflector --country France --country Germany --country Italy --latest 20 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+```
+
+Schedule a systemd service that runs reflector at each boot once the network is up:
+
+```
+// /etc/systemd/system/reflector.service
+[Unit]
+Description=Pacman mirrorlist update
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/reflector --country France --country Germany --country Italy --latest 20 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+
+[Install]
+RequiredBy=multi-user.target
+```
+
+Enable the service and the network wait service of `netctl`:
+
+```
+systemctl enable reflector.service
+systemctl enable netctl-wait-online.service
+```
+
+Ref: [link](wiki.archlinux.org/index.php/Reflector)
