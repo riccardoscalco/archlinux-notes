@@ -92,6 +92,13 @@ Query foreign packages, i.e. packages that were not found in the sync database (
 pacman -Qm
 ```
 
+#### Cleaning the package cache
+
+```
+systemctl enable paccache.timer
+systemctl start paccache.timer
+```
+
 #### LOCALE
 
 Display the currently set locale:
