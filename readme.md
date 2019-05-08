@@ -540,7 +540,7 @@ Verify trim support as described in [wiki.archlinux.org/index.php/Solid_state_dr
 Check if unit `fstrim.timer` is installed:
 
 ```
-systemctl list-unit-files ! grep "fstrim"
+systemctl list-unit-files | grep "fstrim"
 ```
 
 Enable the timer unit:
