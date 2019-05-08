@@ -218,6 +218,33 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 reboot
 ```
 
+For some reason the above method does not work, therefore I use old `vga=` way.
+
+To view the list of supported modes:
+
+```
+sudo hwinfo --framebuffer
+```
+
+Convert to decimal number, for example the `0x0371` returns `881`:
+
+```
+printf "%d\n" 0x0371
+```
+
+Update grub configuration file:
+
+```
+// /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT="quiet module_blacklist=i915,intel_agp vga=881"
+```
+
+Regenerate the main configuration file `/boot/grub/grub.cfg`:
+
+```
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
 #### Composite
 
 Make sure the Composite extension is enabled for the X Server:
