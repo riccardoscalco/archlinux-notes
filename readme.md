@@ -341,6 +341,8 @@ Update with:
 upgrade_oh_my_zsh
 ```
 
+Replace file `~/.profile` with `~/.zprofile`. When starting, Zsh will source it.
+
 #### Termite
 
 Keybinding: [github.com/thestinger/termite#keybindings](github.com/thestinger/termite#keybindings)
