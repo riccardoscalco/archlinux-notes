@@ -120,6 +120,42 @@ UUID=8970229c-3b13-449a-b55d-3407afa339ad       none            swap            
 
 Parameters `default,discard` are related to the use of TRIM support on SSD.
 
+#### Hibernate
+
+Systemd provides commands to hibernate using the kernel's native suspend/resume functionality:
+
+```
+systemctl hibernate
+```
+
+In order to use hibernation is necessary to 1) create a swap partition, 2) set kernel parameters and 3) configure the initramfs.
+
+Set the kernel parameter `resume` in `/etc/default/grub`, usingthe UUID of the swap space [link](wiki.archlinux.org/index.php/Power_management/Suspend_and_hibernate#Required_kernel_parameters):
+
+```
+// /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT="quiet module_blacklist=i915,intel_agp vga=881 resume=UUID=8970229c-3b13-449a-b55d-3407afa339ad"
+```
+
+Reconfigure the main grub configuration file:
+
+```
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+Configure the initramfs adding the `resume` hook after `udev` [link](wiki.archlinux.org/index.php/Power_management/Suspend_and_hibernate#Configure_the_initramfs):
+
+```
+// /etc/mkinitcpio.conf
+HOOKS=(base udev autodetect keyboard modconf block filesystems resume fsck)
+```
+
+Regenerate the initramfs:
+
+```
+mkinitcpio -p linux
+```
+
 #### LOCALE
 
 Display the currently set locale:
