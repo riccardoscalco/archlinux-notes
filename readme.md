@@ -99,6 +99,25 @@ systemctl enable paccache.timer
 systemctl start paccache.timer
 ```
 
+#### Swap
+
+Check swap status using `swapon --show` or `free -h`.
+
+Create a swap partition with:
+
+```
+cfdisk /dev/sdb // use partition type 82
+mkswap /dev/sdb2
+```
+
+The `mkswap` command should return the UUID of the swap space. Enable this swap partition on boot, add an entry to `/etc/fstab`:
+
+```
+// /etc/fstab
+# /dev/sdb2
+UUID=8970229c-3b13-449a-b55d-3407afa339ad       none            swap            defaults,discard        0 0
+```
+
 #### LOCALE
 
 Display the currently set locale:
