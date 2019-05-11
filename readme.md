@@ -118,6 +118,8 @@ The `mkswap` command should return the UUID of the swap space. Enable this swap 
 UUID=8970229c-3b13-449a-b55d-3407afa339ad       none            swap            defaults,discard        0 0
 ```
 
+Parameters `default,discard` are related to the use of TRIM support on SSD.
+
 #### LOCALE
 
 Display the currently set locale:
