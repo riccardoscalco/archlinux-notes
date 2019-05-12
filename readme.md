@@ -99,6 +99,26 @@ systemctl enable paccache.timer
 systemctl start paccache.timer
 ```
 
+#### Mount a partition at boot
+
+The fstab file can be used to define how disk partitions should be mounted into the filesystem.
+
+Mount a give partition at boot:
+
+```
+# /etc/fstab
+# /dev/sdc3
+UUID=d6c15483-a2f1-459c-975d-3b9015b0267b       /mnt/Torrent    ext4            rw,relatime             0 2
+```
+
+Get the UUID of a partition with:
+
+```
+lsblk -no UUID /dev/sdc3
+```
+
+Ref: [link](wiki.archlinux.org/index.php/Fstab)
+
 #### Swap
 
 Check swap status using `swapon --show` or `free -h`.
