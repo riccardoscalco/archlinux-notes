@@ -99,6 +99,20 @@ systemctl enable paccache.timer
 systemctl start paccache.timer
 ```
 
+#### Change owner and group ownership of a directory
+
+Change (recursively) the directory owner as the current user:
+
+```
+chown -R $USER /path/to/dir
+```
+
+Change (recursively) the directory group as the current user group:
+
+```
+chgrp -R $USER /path/tp/dir
+```
+
 #### Mount a partition at boot
 
 The fstab file can be used to define how disk partitions should be mounted into the filesystem.
