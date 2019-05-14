@@ -494,12 +494,16 @@ Update the fontconfig font cache:
 fc-cache
 ```
 
-#### Imagemagick
+#### Imagemagick / Graphicsmagick
 
 Scale an image:
 
 ```
+// imagemagick
 convert image.png -scale 33% rescaled-image.png
+
+// gm
+gm mogrify -resize 256x170! image.jpg
 ```
 
 #### Set Wallpaper Image
