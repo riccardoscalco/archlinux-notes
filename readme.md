@@ -60,6 +60,36 @@ pacman -S terminus-font
 setfont ter-132n (add FONT=ter-132n in /etc/vconsole.conf)
 ```
 
+#### Configure the nftables firewall
+
+```
+sudo pacman -Syu nftables
+```
+
+Note that the system must be updated and rebooted since a kernel upgrade:
+
+```
+ls -l /usr/lib/modules/$(uname -r)/kernel/net/netfilter | grep nft
+```
+
+If the above return no files then probably you nee to reboot.
+
+Rules are listed in `/etc/nftables.conf`.
+
+Start and enable the service as usual with:
+
+```
+systemctl enable --now  nftables.service
+```
+
+Check the status with:
+
+```
+systemctl status nftables.service
+```
+
+Ref: [link](wiki.archlinux.org/index.php/Nftables#Simple_stateful_firewall)
+
 #### Autostart X at login
 
 Add the following to `.zshrc` :
