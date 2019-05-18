@@ -90,6 +90,24 @@ systemctl status nftables.service
 
 Ref: [link](wiki.archlinux.org/index.php/Nftables#Simple_stateful_firewall)
 
+#### Security and system auditing
+
+[Lynis](cisofy.com/lynis/) is a security auditing tool for Linux. The tool checks the system and the software configuration, to see if there is any room for improvement the security defenses.
+
+Github repo: [github.com/CISOfy/lynis](github.com/CISOfy/lynis).
+
+```
+pacman -R lynis
+```
+
+Perform local security scan:
+
+```
+lynis audit system
+```
+
+TODO: apply suggested actions.
+
 #### Autostart X at login
 
 Add the following to `.zshrc` :
