@@ -34,7 +34,7 @@ hwclock --systohc
 // Setup locales
 // uncomment `it_IT.UTF-8` in `/etc/locale.gen`
 echo 'LANG="it_IT.UTF-8"' >> /etc/locale.conf
-echo 'LC_COLLATE="C"' >> /etc/locale.conf 
+echo 'LC_COLLATE="C"' >> /etc/locale.conf
 
 // Set Hostname
 
@@ -107,6 +107,45 @@ lynis audit system
 ```
 
 TODO: apply suggested actions.
+
+#### tmux
+
+Most used keys:on panes:
+
+* `C-b <arrow>`: move to a pane.
+* `C-b C-<arrow>`: resize a pane.
+* `C-b z`: toggle fullscreen a pane.
+* `C-d` or `exit` to close a pane.
+
+Most used keys:on sessions:
+
+* `C-b d`: detach current session.
+* `C-b C-s`: save a session (tmux-resurrect plugin).
+* `C-b C-r`: restore the last saved session (tmux-resurrect plugin).
+* `C-b s`: list sessions, or use `tmux ls`.
+
+Most used keys:on windows:
+
+* `C-b c`: open a new window.
+* `C-b p`: go to previous window.
+* `C-b n`: go to next window.
+* `C-b 3`: go to the third window.
+
+Commands:
+
+```
+// Load config:
+tmux source ~/.tmux.conf
+
+// Attach a session
+tmux attach -t 3
+
+// Rename session 3
+tmux rename-session -t 3 <session-name>
+
+// Kill session 9
+tmux kill-session -t 9
+```
 
 #### Autostart X at login
 
