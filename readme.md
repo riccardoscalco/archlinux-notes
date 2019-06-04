@@ -389,6 +389,12 @@ reboot
 
 Ref: [link](https://wiki.archlinux.org/index.php/NVIDIA/Troubleshooting#Black_screen_on_systems_with_Intel_integrated_GPU)
 
+#### Convert svg to png
+
+```
+svgexport file.svg file.png 100% 2048:2048
+```
+
 #### Setting the framebuffer resolution (TODO):
 
 ```
