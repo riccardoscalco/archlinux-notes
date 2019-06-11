@@ -755,6 +755,8 @@ systemctl --user start psd.service
 systemctl --user enable psd.service
 ```
 
+Edit file `$XDG_CONFIG_HOME/psd/psd.conf`.
+
 Ref: [link](wiki.archlinux.org/index.php/Profile-sync-daemon)
 
 #### Enable Trim on SSD
