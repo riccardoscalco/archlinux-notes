@@ -854,6 +854,16 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 ```
 
+or, with zsh shell,
+
+```
+~/.zprofile
+export EDITOR="nvim"
+export VISUAL="nvim"
+```
+
+Use `source .zprofile` to update global environment variables. 
+
 #### Update the mirror list with Reflector
 
 Install reflector:
