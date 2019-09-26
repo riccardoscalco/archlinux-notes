@@ -319,6 +319,10 @@ pacman -S pulseaudio pulseaudio-alsa alsa-utils
 
 // test
 speaker-test -c 2
+
+// kill and restart pulseaudio
+pulseaudio -k
+pulseaudio --start
 ```
 
 #### Image viewer
