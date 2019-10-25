@@ -907,3 +907,12 @@ systemctl enable netctl-wait-online.service
 ```
 
 Ref: [link](wiki.archlinux.org/index.php/Reflector)
+
+#### Firefox Developer Edition
+
+Enable spell checking:
+
+```
+pacman -S hunspell hunspell-it
+// then restart the browser
+```
