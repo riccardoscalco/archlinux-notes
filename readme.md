@@ -916,6 +916,7 @@ Enable spell checking:
 pacman -S hunspell hunspell-it
 // then restart the browser
 ```
+
 #### Vscode
 
 Disable GPU acceleration adding the following line to file `argv.json` (Ctrl-Shif-P -> Preferences: Configure Runtime Argument), after that restart vscode:
@@ -923,5 +924,12 @@ Disable GPU acceleration adding the following line to file `argv.json` (Ctrl-Shi
 ```
 "disable-hardware-acceleration": true
 ```
+
+#### Full system backup with rsync
+
+```
+rsync -aAXv --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found", "/home/riccardo/Git", "/home/*/.cache/mozilla/*", "/home/*/.cache/chromium/*"} / /mnt
+```
+
 
 
