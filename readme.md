@@ -450,21 +450,21 @@ xdpyinfo | grep Composite
 
 `xdpyinfo` can be installed with `pacman -S xorg-xdpyinfo`.
 
-Install Compton:
+Install Picom:
 
 ```
-pacman -S compton
+pacman -S picom
 ```
 
-Exec Compton when X starts (with i3 window manager):
+Exec Picom when X starts (with i3 window manager):
 
 ```
 // ~/.config/i3/config
 # Automatically starting applications on i3 startup
-exec compton -CGb
+exec picom -CGb
 ```
 
-Ref: [link](wiki.archlinux.org/index.php/Xcompmgr#Installation), [link](wiki.archlinux.org/index.php/Compton)
+Ref: [link](wiki.archlinux.org/index.php/Xcompmgr#Installation), [compton (replaced by picom)](wiki.archlinux.org/index.php/Compton), [picom](https://wiki.archlinux.org/index.php/Picom)
 
 #### Nodejs
 
