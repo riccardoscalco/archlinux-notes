@@ -928,7 +928,7 @@ Disable GPU acceleration adding the following line to file `argv.json` (Ctrl-Shi
 #### Full system backup with rsync
 
 ```
-rsync -aAXv --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found", "/home/riccardo/Git", "/home/*/.cache/mozilla/*", "/home/*/.cache/chromium/*"} / /mnt
+rsync -aAXv --delete --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found", "/home/riccardo/Git", "/home/*/.cache/mozilla/*", "/home/*/.cache/chromium/*"} / /mnt
 ```
 
 
