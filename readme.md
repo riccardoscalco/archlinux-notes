@@ -916,3 +916,12 @@ Enable spell checking:
 pacman -S hunspell hunspell-it
 // then restart the browser
 ```
+#### Vscode
+
+Disable GPU acceleration adding the following line to file `argv.json` (Ctrl-Shif-P -> Preferences: Configure Runtime Argument), after that restart vscode:
+
+```
+"disable-hardware-acceleration": true
+```
+
+
