@@ -931,5 +931,21 @@ Disable GPU acceleration adding the following line to file `argv.json` (Ctrl-Shi
 rsync -aAXv --delete --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found","/home/riccardo/Git","/home/*/.cache/mozilla/*","/home/*/.cache/chromium/*"} / /mnt
 ```
 
+#### Synchronizing the system clock across the network
+
+Start/enable `systemd-timesyncd` service:
+
+```
+systemctl start systemd-timesyncd.service
+systemctl enable systemd-timesyncd.service
+```
+
+Check the service status with:
+
+```
+timedatectl status
+```
+
+Ref: [link](https://wiki.archlinux.org/index.php/Systemd-timesyncd)
 
 
