@@ -314,13 +314,25 @@ lsmod | grep '^snd' | column -t
 // check the directory /dev/snd/ for the right device files
 ls -l /dev/snd
 
-// install pulseaudio and utils
-pacman -S pulseaudio pulseaudio-alsa alsa-utils
+// install alsa utils
+pacman -S alsa-utils
 
 // test
 speaker-test -c 2
+```
 
-// kill and restart pulseaudio
+#### Pulseaudio
+
+
+Pulseaudio should not be necessary. If needed, install pulseaudio with:
+
+```
+pacman -S pulseaudio pulseaudio-alsa
+```
+
+Kill and restart pulseaudio with:
+
+```
 pulseaudio -k
 pulseaudio --start
 ```
