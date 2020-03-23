@@ -819,6 +819,8 @@ Enable a profile on boot:
 netctl enable <profile>
 ```
 
+To delete a profile, just remove it in directory `/etc/netctl`.
+
 #### Disable pc speaker beep
 
 ```
