@@ -979,13 +979,25 @@ xrandr -q --current | grep '*' | awk '{print$1}'
 Make a sccreencast:
 
 ```
-ffmpeg -f x11grab  -s 3840x2160 -i :0.0 -r 25 -vcodec libx264  output.mkv
+ffmpeg -f x11grab  -s 3840x2160 -i :0.0 -r 25 -vcodec libx264  output.mp4
+```
+
+Make a screencsat on the right screen:
+
+```
+ffmpeg -f x11grab  -s 3840x2160 -i :0.0+3840,0 -r 25 -vcodec libx264  output.mp4
+```
+
+Make a screencast at a lower resolution:
+
+```
+ffmpeg -f x11grab  -s 3840x2160 -i :0.0 -r 25 -vcodec libx264 -vf scale=1920:-1 output.mp4
 ```
 
 View the screencast:
 
 ```
-mpv output.mkv
+mpv output.mp4
 ```
 
 
