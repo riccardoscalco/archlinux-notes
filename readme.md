@@ -962,4 +962,30 @@ timedatectl status
 
 Ref: [link](https://wiki.archlinux.org/index.php/Systemd-timesyncd)
 
+#### Make a screencast
+
+Install tools:
+
+```
+sudo pacman -S ffmpeg mkvtoolnix-cli
+```
+
+Find display resolution with:
+
+```
+xrandr -q --current | grep '*' | awk '{print$1}'
+```
+
+Make a sccreencast:
+
+```
+ffmpeg -f x11grab  -s 3840x2160 -i :0.0 -r 25 -vcodec libx264  output.mkv
+```
+
+View the screencast:
+
+```
+mpv output.mkv
+```
+
 
