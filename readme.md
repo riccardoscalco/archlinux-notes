@@ -962,6 +962,12 @@ timedatectl status
 
 Ref: [link](https://wiki.archlinux.org/index.php/Systemd-timesyncd)
 
+#### Make a screenshot
+
+```
+scrot -d 5 -c
+```
+
 #### Make a screencast
 
 Install tools:
