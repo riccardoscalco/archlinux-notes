@@ -1010,4 +1010,18 @@ View the screencast:
 mpv output.mp4
 ```
 
+#### Convert djvu to pdf
+
+Install djvulibre
+
+```
+sudo pacman -S djvulibre
+```
+
+Convert to pdf
+
+```
+ddjvu --format=pdf input.djvu output.pdf
+```
+
 
