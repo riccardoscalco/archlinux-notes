@@ -1024,4 +1024,23 @@ Convert to pdf
 ddjvu --format=pdf input.djvu output.pdf
 ```
 
+#### Tor
+	
+```
+sudo pacman -S torbrowser-launcher
+```
+	
+Enable and start tor:
+
+```
+systemctl enable --now tor
+```
+
+Run with:
+	
+```
+torbrowser-launcher
+```
+
+
 
