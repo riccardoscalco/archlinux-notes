@@ -622,6 +622,13 @@ convert image.png -scale 33% rescaled-image.png
 gm mogrify -resize 256x170! image.jpg
 ```
 
+Merge many files into a single PDF file:
+
+```
+// it works with PNG as well
+convert 1.pdf 2.pdf 3.pdf out.pdf
+```
+
 #### Set Wallpaper Image
 
 Install feh:
