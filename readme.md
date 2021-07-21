@@ -1055,9 +1055,33 @@ Run with:
 torbrowser-launcher
 ```
 
+#### ocrmypdf
+	
+(OCRmyPDF)[https://pypi.org/project/ocrmypdf/] adds an OCR text layer to scanned PDF files, allowing them to be searched or copy-pasted.
+	
+For the installation, I tried both the AUR way and the brew way without success. Then the Python way saved my day.
+
+Install dependencies:
+	
+```
+pacman -S tesseract tesseract-data-eng tesseract-data-ita qpdf python-pip
+```
+
+Install ocrmypd:
+	
+```
+pip install ocrmypd
+```
+	
+Run ocrmypd (without PATH and environment variables update):
+	
+```
+env TESSDATA_PREFIX=/usr/share/tessdata/ ~/.local/bin/ocrmypdf in.pdf out.pdf
+```
+	
 #### Errors
 
-### too many open files
+**Error**: too many open files
 
 Command `ulimit -n` shows the current file limit.
 Add the following line to `/etc/security/limits.conf` and reboot.
@@ -1065,5 +1089,6 @@ Add the following line to `/etc/security/limits.conf` and reboot.
 ```
 *               soft    nofile  4096
 ```
+
 
 
