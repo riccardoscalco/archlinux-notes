@@ -1055,5 +1055,15 @@ Run with:
 torbrowser-launcher
 ```
 
+#### Errors
+
+### too many open files
+
+Command `ulimit -n` shows the current file limit.
+Add the following line to `/etc/security/limits.conf` and reboot.
+	
+```
+*               soft    nofile  4096
+```
 
 
