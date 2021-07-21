@@ -610,6 +610,12 @@ Update the fontconfig font cache:
 fc-cache
 ```
 
+List available fonts:
+
+```
+fc-list : family style
+```
+
 #### Imagemagick / Graphicsmagick
 
 Scale an image:
