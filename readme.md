@@ -248,6 +248,14 @@ UUID=8970229c-3b13-449a-b55d-3407afa339ad       none            swap            
 
 Parameters `default,discard` are related to the use of TRIM support on SSD.
 
+#### Suspend
+
+If you are using systemd (which is default in Arch Linux) and **install polkit**, users with non-remote session can issue power-related commands [as long as the session is not broken](https://wiki.archlinux.org/title/Allow_users_to_shutdown).
+
+```
+systemctl suspend
+```
+
 #### Hibernate
 
 Systemd provides commands to hibernate using the kernel's native suspend/resume functionality:
