@@ -1057,7 +1057,7 @@ torbrowser-launcher
 
 #### ocrmypdf
 	
-(OCRmyPDF)[https://pypi.org/project/ocrmypdf/] adds an OCR text layer to scanned PDF files, allowing them to be searched or copy-pasted.
+[OCRmyPDF](https://pypi.org/project/ocrmypdf/) adds an OCR text layer to scanned PDF files, allowing them to be searched or copy-pasted.
 	
 For the installation, I tried both the AUR way and the brew way without success. Then the Python way saved my day.
 
