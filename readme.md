@@ -1,11 +1,6 @@
-#### To Do
-
-* move /home to an encripted partition
-* clone disk (wiki.archlinux.org/index.php/Dd#Disk_cloning_and_restore)
-* clean config files (wiki.archlinux.org/index.php/System_maintenance#Clean_the_filesystem)
-* decorate virtual console (github.com/uobikiemukot/yaft)
-* evaluate file manager (github.com/jarun/nnn#cmdline-options)
-* consolidate colorisation (wiki.archlinux.org/index.php/Color_output_in_console#pacman)
+<div style="width: 100%">
+	<img src="image.png">
+</div>
 
 #### Installation notes
 
@@ -905,7 +900,7 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 ```
 
-Use `source .zprofile` to update global environment variables. 
+Use `source .zprofile` to update global environment variables.
 
 #### Update the mirror list with Reflector
 
@@ -1046,11 +1041,11 @@ ddjvu --format=pdf input.djvu output.pdf
 ```
 
 #### Tor
-	
+
 ```
 sudo pacman -S torbrowser-launcher
 ```
-	
+
 Enable and start tor:
 
 ```
@@ -1058,45 +1053,49 @@ systemctl enable --now tor
 ```
 
 Run with:
-	
+
 ```
 torbrowser-launcher
 ```
 
 #### ocrmypdf
-	
+
 [OCRmyPDF](https://pypi.org/project/ocrmypdf/) adds an OCR text layer to scanned PDF files, allowing them to be searched or copy-pasted.
-	
+
 For the installation, I tried both the AUR way and the brew way without success. Then the Python way saved my day.
 
 Install dependencies:
-	
+
 ```
 pacman -S tesseract tesseract-data-eng tesseract-data-ita qpdf python-pip
 ```
 
 Install ocrmypd:
-	
+
 ```
 pip install ocrmypd
 ```
-	
+
 Run ocrmypd (without PATH and environment variables update):
-	
+
 ```
 env TESSDATA_PREFIX=/usr/share/tessdata/ ~/.local/bin/ocrmypdf in.pdf out.pdf
 ```
-	
+
 #### Errors
 
 **Error**: too many open files
 
 Command `ulimit -n` shows the current file limit.
 Add the following line to `/etc/security/limits.conf` and reboot.
-	
+
 ```
 *               soft    nofile  4096
 ```
 
+#### To Do
 
-
+* move /home to an encripted partition
+* clone disk (wiki.archlinux.org/index.php/Dd#Disk_cloning_and_restore)
+* clean config files (wiki.archlinux.org/index.php/System_maintenance#Clean_the_filesystem)
+* consolidate colorisation (wiki.archlinux.org/index.php/Color_output_in_console#pacman)
