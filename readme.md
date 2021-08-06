@@ -638,6 +638,12 @@ Merge many files into a single PDF file:
 convert 1.pdf 2.pdf 3.pdf out.pdf
 ```
 
+Extracts pages from a pdf:
+
+```
+pdftk ORIG_FILE.pdf cat 1-5 output NEW_FILE.pdf
+```
+
 #### Set Wallpaper Image
 
 Install feh:
