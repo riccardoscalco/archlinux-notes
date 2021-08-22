@@ -1087,6 +1087,14 @@ Run ocrmypd (without PATH and environment variables update):
 ```
 env TESSDATA_PREFIX=/usr/share/tessdata/ ~/.local/bin/ocrmypdf in.pdf out.pdf
 ```
+	
+#### Base64
+
+Create base64 data from font files and copy the standard output to the clipboard:
+	
+```
+base64 -w 0 my-font.woff2 | xclip -selection clipboard
+```
 
 #### Errors
 
