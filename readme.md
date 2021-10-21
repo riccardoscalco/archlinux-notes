@@ -1063,6 +1063,14 @@ Run with:
 ```
 torbrowser-launcher
 ```
+	
+#### Peek
+	
+[Peek](https://github.com/phw/peek#arch-linux) is a simple screen recorder with an easy to use interface, Peek makes it easy to create short screencasts of a screen area. Install Peek with:
+
+```
+sudo pacman -S peek
+```
 
 #### ocrmypdf
 
