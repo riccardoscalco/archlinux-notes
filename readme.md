@@ -495,6 +495,20 @@ PATH="$HOME/.node_modules/bin:$PATH"
 export npm_config_prefix=~/.node_modules
 ```
 
+#### nvm
+
+Install with:
+
+```
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+```
+
+Use node v14:
+
+```
+nvm use v14
+```
+
 #### Managing .pac* files
 
 
